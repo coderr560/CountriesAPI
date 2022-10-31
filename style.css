@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+    /* normal (light) colors. */
+    --background_color_el: hsl(0, 0%, 100%);
+    --body_color: hsl(0, 0%, 90%);
+}
+
+/* placeholder text color. */
+.search::placeholder {
+    color: inherit;
+}
+
+body {
+    background-color: var(--body_color);
+    color:hsl(200, 15%, 8%);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+body.dark {
+    /* define the dark mode colors. */
+    --body_color: hsl(207, 26%, 17%);
+    --background_color_el: hsl(209, 23%, 22%);
+    /* different bg dark color, to distinguish it better. */
+    background-color: hsl(207, 26%, 17%);
+    color: white; /* text color. */
+}
+
+header {
+    background-color: var(--background_color_el);
+    padding: 0px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+header.dark {
+    background-color: var(--background_color_el);
+}
+
+h1 {
+    margin: 0;
+}
+
+/* button styling. */
+.btn-dark-mode {
+    background-color: var(--background_color_el);
+    color: inherit;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-dark-mode:hover {
+    filter: brightness(110%);
+}
+
+.btn-dark-mode .fas {
+    display: none;
+}
+
+body.dark .btn-dark-mode .fas {
+    display: inline-block;
+}
+
+body.dark .btn-dark-mode .far {
+    display: none;
+}
+
+/* input styling. */
+.search {
+    background-color: var(--background_color_el);
+    color: inherit;
+    font-size: 14px;
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    min-width: 300px;
+}
+
+.search:hover {
+    filter: brightness(110%);
+}
+
+/* dropdown styling. */
+.dropdown {
+    background-color: var(--background_color_el);
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    font-size: 14px;
+    padding: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropdown:hover {
+    filter: brightness(110%);
+}
+
+.dropdown ul {
+    background-color: inherit;
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    padding: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-decoration-break: inherit;
+}
+
+.dropdown.open ul {
+    display: block;
+    padding-left: 20px;
+}
+
+.dropdown ul li {
+    margin: 10px 0;
+}
+
+.dropdown .fa-chevron-down {
+    margin-left: 4px;
+}
+
+/* card styling. */
+img {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: auto;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    /* position: relative; */
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    background-color: var(--background_color_el);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover {
+    filter: brightness(110%);
+}
+
+.card img {
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
+}
+
+.card-header {
+    margin: 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h2 {
+    margin: 0;
+}
+
+.container.countries {
+    justify-content: center;
+}
+
+/* modal styling. */
+.modal {
+    background-color: inherit;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.container:hover {
+    filter: brightness(110%);
+}
+
+.modal .container {
+    background-color: var(--background-el);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.modal img {
+    max-width: 300%;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.btn-close {
+    border: none;
+    position: relative;
+    top: -200px;
+    right: -600px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-close:hover {
+    filter: brightness(110%);
+}
