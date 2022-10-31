@@ -1,67 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Countries API</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/favicon.svg" sizes="any" type="image/svg+xml">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/favicon.svg" sizes="any" />
+  </head>
+  <body>
     <header>
-    <div class="container">
+      <div class="container">
         <h1>Where in the World?</h1>
         <button class="btn-dark-mode" id="dark-mode">
-            <i class="far fa-moon"></i>
-            <i class="fas fa-moon"></i>
-            Dark Mode
+          <i class="far fa-moon"></i>
+          <i class="fas fa-moon"></i>
+          Dark Mode
         </button>
-    </div>
+      </div>
     </header>
 
     <section>
-        <div class="container">
-            <input
-                class="search"
-                id="search"
-                type="text"
-                placeholder="Search for a country, code, or capital"
-            >
-            <div class="dropdown" id="filter">
-                Filter by Region
-                <i class="fas fa-chevron-down"></i>
-                <ul>
-                    <li>All</li>
-                    <li>Africa</li>
-                    <li>Americas</li>
-                    <li>Asia</li>
-                    <li>Europe</li>
-                    <li>Oceania</li>
-                </ul>
-            </div>
+      <div class="container">
+        <input
+          class="search"
+          id="search"
+          type="text"
+          placeholder="Search for a country, code, or capital"
+        />
+        <div class="dropdown" id="filter">
+          Filter by Region
+          <i class="fas fa-chevron-down"></i>
+          <ul>
+            <li>All</li>
+            <li>Africa</li>
+            <li>Americas</li>
+            <li>Asia</li>
+            <li>Europe</li>
+            <li>Oceania</li>
+          </ul>
         </div>
+      </div>
     </section>
 
     <div class="modal" id="modal">
-        <div class="container">
-            <button class="btn-close" id="close">
-                <i class="fas fa-times"></i>
-            </button>
-            <img src="" alt="" />
-            <div class="modal-body"></div>
-        </div>
+      <div class="container">
+        <button class="btn-close" id="close">
+          <i class="fas fa-times"></i>
+        </button>
+        <img src="" alt="" />
+        <div class="modal-body"></div>
+      </div>
     </div>
 
-    <section>
-        <div class="container countries" id="countries">
-            <!-- Country cards will be rendered here by JS. -->
-            <h2>Countries loading...</h2>
-        </div>
+    <section class="container countries" id="countries">
+      <!-- Country cards will be rendered here by JS. -->
+      <h2>Countries loading...</h2>
     </section>
 
-    <script src="script.js"></script>
-</body>
+    <template id="countryElTemplate">
+      <div class="card">
+        <div class="card-header">
+          <img src="" alt="Peru" />
+        </div>
+        <div class="card-body">
+          <h2 class="country-name"></h2>
+          <p class="country-codes">
+            <strong>Codes: </strong>
+            <span class="country-cca"></span>
+          </p>
+          <p class="country-capital">
+            <strong>Capital: </strong>
+            <span class="country-capital-val"></span>
+          </p>
+          <p class="country-region">
+            <strong>Region: </strong>
+            <span class="country-region-val"></span>
+          </p>
+          <p class="country-population">
+            <strong>Population: </strong>
+            <span class="country-population-val"></span>
+          </p>
+        </div>
+      </div>
+    </template>
+
+    <script src="main.js"></script>
+  </body>
 </html>
